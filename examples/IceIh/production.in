@@ -1,0 +1,20 @@
+potential               ../water.nep
+
+ensemble                nve
+dump_thermo             50
+dump_xyz                -1 1 1 vdos.xyz mass velocity unwrapped_position
+dump_xyz                -1 1 50 traj2ps.xyz mass velocity unwrapped_position
+time_step               0.1
+run                     20000
+
+ensemble                nve
+dump_thermo             50
+dump_xyz                -1 1 50 traj10ps.xyz mass velocity unwrapped_position
+time_step               0.1
+run                     80000
+
+ensemble                nve
+dump_thermo             500
+dump_xyz                -1 1 500 traj30ps.xyz mass velocity unwrapped_position
+time_step               0.1
+run                     200000
