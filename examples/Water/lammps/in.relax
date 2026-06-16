@@ -1,0 +1,53 @@
+variable 	nnpDir string "./H2O_RPBE-D3"
+variable 	nnpCutoff equal  6.36
+variable	Hmass equal 1.007825
+variable	Omass equal 15.994915
+variable	temp equal 300.0
+variable	press equal 1.0
+variable        dt equal 0.001
+variable    	L1 equal 0
+variable    	L2 equal 31.0
+
+units		metal
+atom_style	atomic
+boundary 	p p p
+
+region      	box block -${L1} ${L2} -${L1} ${L2} -${L1} ${L2}
+create_box  	2 box
+
+molecule    	water water.mol
+create_atoms    0 random 1000 12345 NULL mol water 67890 overlap 2.0 maxtry 100000
+
+mass		1 ${Omass}
+mass		2 ${Hmass}
+
+pair_style 	hdnnp ${nnpCutoff} dir ${nnpDir} &
+		showew no showewsum 0 resetew yes &
+		maxew 100000000 cflength 1.8897261328 cfenergy 0.0367493254
+pair_coeff 	* * O H
+
+thermo_style    custom step atoms etotal density temp press
+thermo		10
+
+minimize        1.0e-8 1.0e-10 10000 10000
+
+thermo          100
+
+velocity	all create 300.0 02468 mom yes rot yes dist gaussian
+
+fix		relax1 all nve/limit 0.1
+run		2000
+unfix		relax1
+
+#reset_timestep  0
+#timestep        ${dt}
+
+#fix             fix1 all nvt temp 300.0 300.0 $(dt*100.0) #iso 1.0 1.0 $(dt*100)
+#run             10000
+#unfix           fix1
+
+reset_timestep  0
+
+dump 		1 all custom 1 nnp.dump id type x y z vx vy vz xu yu zu
+dump_modify 	1 sort id format float %20.16f
+run 		0

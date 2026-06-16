@@ -1,0 +1,22 @@
+potential       ../water.nep
+
+minimize        sd 1.0e-6 20000
+
+velocity        200
+
+ensemble        npt_ber 200.0 200.0 100.0 0.0001 2.2 1000.0
+time_step       1.0
+dump_thermo     100
+dump_xyz        -1 1 100 npt.xyz mass velocity unwrapped_position
+run             10000
+
+ensemble        nvt_nhc 200.0 200.0 1000.0
+time_step       1.0
+dump_thermo     100
+dump_xyz        -1 1 100 nvt.xyz mass velocity unwrapped_position
+run             10000
+
+ensemble        nve
+time_step       0.0
+dump_xyz        -1 1 1 relaxed.xyz mass velocity unwrapped_position
+run             1
