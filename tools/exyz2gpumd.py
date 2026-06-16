@@ -1,3 +1,5 @@
+#!/usr/bin/env -S python3 -u
+
 from argparse import ArgumentParser, Namespace
 
 import numpy as np

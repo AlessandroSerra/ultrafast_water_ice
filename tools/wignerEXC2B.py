@@ -12,8 +12,7 @@ from numpy.typing import NDArray
 from scipy.integrate import simpson
 from scipy.interpolate import RectBivariateSpline, interp1d
 from scipy.linalg import eigh_tridiagonal
-
-from waterTools.unwrap_coords import unwrap_coords
+from unwrap_coords import unwrap_coords
 
 # Configure logger
 logger = logging.getLogger(__name__)
