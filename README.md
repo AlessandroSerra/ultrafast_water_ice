@@ -13,8 +13,8 @@ The project investigates ultrafast vibrational energy relaxation in hydrogen-bon
 ultrafast_water_ice/
 ├── data/       # Processed data used for analysis
 ├── examples/   # Minimal workflows for Water, Ice Ih, and Ice IX
-├── notebooks/  # Jupyter notebooks for post-processing
-├── plots/      # Plotting scripts and generated figures
+├── notebooks/  # Jupyter notebooks for generating all the plots
+├── plots/      # Plots generated from the notebooks
 └── tools/      # Conversion, excitation, and analysis utilities
 ```
 
@@ -104,12 +104,7 @@ The analysis separates initially excited molecules from the unexcited environmen
 If you use this repository, please cite the associated paper:
 
 ```bibtex
-@article{serra_ultrafast_water_ice,
-  title   = {How Hydrogen-Bond Topology Shapes Ultrafast O--H Stretch Relaxation in Water and Ice},
-  author  = {Serra, Alessandro and Donadio, Davide and Dettori, Riccardo},
-  journal = {To be added},
-  year    = {To be added},
-  doi     = {To be added}
+TO BE ADDED
 }
 ```
 
