@@ -36,3 +36,4 @@ gpumd > log.production 2>&1
 
 ## Analysis
 Now the tools in the ../../tools/ folder can be used to analyse the trajectories; the file 'excited-indexes.dat' contains which atom(s) has been excited in the previous step.
+

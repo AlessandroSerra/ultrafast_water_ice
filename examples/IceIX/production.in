@@ -18,3 +18,4 @@ dump_thermo             500
 dump_xyz                -1 1 500 traj30ps.xyz mass velocity unwrapped_position
 time_step               0.1
 run                     200000
+

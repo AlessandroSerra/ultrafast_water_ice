@@ -20,3 +20,4 @@ ensemble        nve
 time_step       0.0
 dump_xyz        -1 1 1 relaxed.xyz mass velocity unwrapped_position
 run             1
+
