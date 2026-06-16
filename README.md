@@ -58,7 +58,7 @@ gpumd > log.relax 2>&1
 The vibrational excitation can then be generated with:
 
 ```bash
-../../tools/wignerEXC2B.py relaxed.xyz -d excited.xyz -e 0.1 -vv > log.excite 2>&1
+./tools/wignerEXC2B.py relaxed.xyz -d excited.xyz -e 0.1 -vv > log.excite 2>&1
 ```
 
 where `-e 0.1` corresponds to exciting 10% of the molecules.
@@ -71,7 +71,7 @@ cp production.in run.in
 gpumd > log.production 2>&1
 ```
 
-The file `excited-indexes.dat` contains the indices of the molecules excited during the Wigner initialization step.
+The file `excited-indexes.dat` contains the indices of the atoms excited during the Wigner initialization step.
 
 ## Tools
 
@@ -105,7 +105,6 @@ If you use this repository, please cite the associated paper:
 
 ```bibtex
 TO BE ADDED
-}
 ```
 
 ## Authors
@@ -113,3 +112,7 @@ TO BE ADDED
 - Alessandro Serra
 - Davide Donadio
 - Riccardo Dettori
+
+## License
+
+This repository is distributed under the BSD 3-Clause License. See the `LICENSE` file for details.
